@@ -5,12 +5,19 @@ function ucfirst(str){
 function capitalize(str) {
     var splitStr = str.toLowerCase().split(' ');
     for (var i = 0; i < splitStr.length; i++) {
-        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].slice(1); 
+        splitStr[i] = ucfirst(splitStr[i]); 
     }
     return splitStr.join(' '); 
  }
+
+ function camelCase(str) {
+     str = capitalize(str);
+    return str = str.replace(/ +/g, "");
+ }
+
 
 
 
 console.log(ucfirst("test"));
 console.log(capitalize("test un deux"));
+console.log(camelCase("test un deux"));
